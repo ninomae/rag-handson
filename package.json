@@ -8,7 +8,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "biome lint ./src",
-		"vector:create": "tsx --env-file=.env ./src/vector/create-collection.ts"
+		"vector:create": "tsx --env-file=.env ./src/vector/create-collection.ts",
+		"vector:upsert": "tsx --env-file=.env ./src/vector/upsert-collection.ts"
 	},
 	"dependencies": {
 		"@ai-sdk/openai": "^1.0.20",
