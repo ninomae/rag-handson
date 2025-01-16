@@ -14,9 +14,10 @@ const data = await fs.readFile(path.resolve(__dirname, "./data.txt"), {
 });
 
 const { embeddings } = await model.doEmbed({
-	values: [data],
+	values: data.split("\n"),
 });
 
+/*
 const points = embeddings.map((embedding, index) => {
 	return {
 		id: index,
@@ -30,3 +31,4 @@ const points = embeddings.map((embedding, index) => {
 await qdrantClient.upsert("rag_hands_on", {
 	points,
 });
+*/
