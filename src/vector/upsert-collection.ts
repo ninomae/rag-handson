@@ -13,11 +13,12 @@ const data = await fs.readFile(path.resolve(__dirname, "./data.txt"), {
 	encoding: "utf8",
 });
 
+/*
+
 const { embeddings } = await model.doEmbed({
 	values: data.split("\n"),
 });
 
-/*
 const points = embeddings.map((embedding, index) => {
 	return {
 		id: index,
