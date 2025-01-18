@@ -60,38 +60,21 @@ Retrieval-Augmented Generation（以下 RAG）とは、大規模言語モデル�
 ---
 
 <!-- _header: コレクションを作成してみよう -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
+```bash
+pnpm vector:create
 ```
+上記コマンドを実行して、下記を見てみましょう
+http://localhost:6333/dashboard#/collections
 
 ---
 
 <!-- _header: コレクションにデータを投入してみよう -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
+```bash
+pnpm vector:upsert
 ```
+上記コマンドを実行して、下記を見てみましょう
+http://localhost:6333/dashboard#/collections
+
 
 ---
 
