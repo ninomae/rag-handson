@@ -53,20 +53,9 @@ Retrieval-Augmented Generation（以下 RAG）とは、大規模言語モデル�
 ---
 
 <!-- _header: 本日の技術スタック紹介 -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
-```
+![height:100](./images/open-ai.png)
+<br>
+![height:100](./images/logo_with_text.png)
 
 ---
 
