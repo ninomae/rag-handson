@@ -44,20 +44,11 @@ https://github.com/ninomae/rag-handson
 ---
 
 <!-- _header: RAGとは -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
-```
+Retrieval-Augmented Generation（以下 RAG）とは、大規模言語モデル（LLM）の生成能力と、外部の情報を取り込むための**検索（リトリーバル）**を組み合わせた手法のことです。
+
+<!-- footer: Footer -->
+![height:400](./images/RAG_diagram.png)
+[出典:wikipedia](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
 
 ---
 
