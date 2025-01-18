@@ -78,20 +78,27 @@ http://localhost:6333/dashboard#/collections
 
 ---
 
-<!-- _header: コレクションにデータを投入してみよう -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
+<!-- _header: 解説:コレクションにデータを投入してみよう -->
+```typescript
+// 1.open-aiに問い合わせて読み込んだデータをベクトル化
+const { embeddings } = await embedMany({
+	model,
+	values,
+});
+// 2. VectorDBであるQdrantの形式に変換
+const points = embeddings.map((embedding, index) => {
+	return {
+		id: index,
+		payload: {
+			value: values[index],
+		},
+		vector: embedding,
+	};
+});
+// 3.QdrantにUpsert
+await qdrantClient.upsert("rag_hands_on", {
+	points,
+});
 ```
 
 ---
