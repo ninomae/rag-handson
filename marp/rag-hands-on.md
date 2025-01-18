@@ -24,31 +24,22 @@ _class: title
 ---
 
 <!-- _header: 事前準備 -->
-# H1 ABCDE abcde
-## H2 ABCDE abcde
-### H3 ABCDE abcde
-#### H4 ABCDE abcde
-##### H5 ABCDE abcde
-![bg right:33% height:100](https://github.com/marp-team/marp/blob/main/marp.png?raw=true)
+こちらをチェックアウトして、README.mdに従って準備をしてください
+https://github.com/ninomae/rag-handson
+
+![bg right:33% height:300](./images/QR_166699.png)
 <!-- footer: Footer -->
 
 ---
 
 <!-- _header: 自己紹介 -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
-```
+- 名前: 西田宗太郎
+- 出身: 福岡
+- 好きな食べ物: ラーメン、鮨、焼肉
+- 職業: エンジニア
+- 趣味: 開発とゲーム
+- 好きな言語: C#、TypeScript
+![bg right:50% height:70%](./images/profile.jpg)
 
 ---
 
