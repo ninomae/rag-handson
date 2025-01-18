@@ -12,8 +12,6 @@ interface SearchResult {
 }
 
 export async function searchDocuments(query: string): Promise<SearchResult> {
-	await new Promise((resolve) => setTimeout(resolve, 1000));
-
 	// 1. 入力した内容をベクトル化
 	const { embeddings } = await model.doEmbed({
 		values: [query],
@@ -36,8 +34,8 @@ export async function searchDocuments(query: string): Promise<SearchResult> {
 ${query}
 
 ### 類似ドキュメント		
-${similarDocuments.points.map((doc) => doc.payload.value).join("\n")}
-		`,
+${similarDocuments.points.map((doc) => doc.payload?.value).join("\n")}
+`,
 	});
 
 	return {
