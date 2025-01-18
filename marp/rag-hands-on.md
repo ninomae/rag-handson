@@ -110,40 +110,35 @@ pnpm dev
 上記コマンドを実行して、下記を見てみましょう
 http://localhost:3000
 
----
-
-<!-- _header: 問い合わせをしてみよう -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
-```
+行ったことがある国は？と聞いてみましょう
 
 ---
 
-<!-- _header: 処理の流れを見てみよう -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
+<!-- _header: 解説:問い合わせをしてみよう -->
+```typescript
+// 1. 入力した内容をベクトル化
+const { embeddings } = await model.doEmbed({
+   values: [query],
+});
+// 2. ベクトルを使って類似ドキュメントを検索
+const similarDocuments = await qdrantClient.query("rag_hands_on", {
+   query: embeddings[0],
+   limit: 5,
+   with_payload: true,
+});
+// 3. 類似ドキュメントを使って回答を生成
+const text = await generateText({
+		model: openai("gpt-4o-mini"),
+		prompt: `以下にユーザーの質問と類似ドキュメントを示します。
+ユーザーの質問から、類似ドキュメントに対する回答を示してください。
+		
+### ユーザーの質問
+${query}
+
+### 類似ドキュメント		
+${similarDocuments.points.map((doc) => doc.payload?.value).join("\n")}
+`,
+});
 ```
 
 ---
