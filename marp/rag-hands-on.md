@@ -104,20 +104,11 @@ await qdrantClient.upsert("rag_hands_on", {
 ---
 
 <!-- _header: 問い合わせをしてみよう -->
-1. **Bold bold bold bold bold**
-2. *Italic italic italic italic italic*
-3. Mathematical formula
-$$
-\int^2_0 (x+1)dx=\left[\frac{1}{2}x^2+x\right]^2_0=4
-$$ 
-4. Code
-```c
-#include <stdio.h>
-int main() {
-   printf("Hello, World!");
-   return 0;
-}
+```bash
+pnpm dev
 ```
+上記コマンドを実行して、下記を見てみましょう
+http://localhost:3000
 
 ---
 
