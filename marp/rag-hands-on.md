@@ -45,10 +45,33 @@ https://github.com/ninomae/rag-handson
 
 <!-- _header: RAGとは -->
 Retrieval-Augmented Generation（以下 RAG）とは、大規模言語モデル（LLM）の生成能力と、外部の情報を取り込むための**検索（リトリーバル）**を組み合わせた手法のことです。
-
-<!-- footer: Footer -->
 ![height:400](./images/RAG_diagram.png)
+<!-- footer: Footer -->
 [出典:wikipedia](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
+
+---
+
+<!-- _header: なぜRAGが必要なの？ -->
+Chat GPTなどの大規模言語モデルは、生成能力が高い一方で、**情報の信頼性**や**情報の正確性**に課題があります。
+
+例: Chat GPTに「きさま────いったい何人の生命をその傷のために吸い取った!?」と聞くと、以下のような回答が返ってきます。
+![height:300](./images/gpt-response.png)
+<!-- footer: Footer -->
+
+---
+<!-- _header: RAGがあると？ -->
+
+RAGがある場合
+```txuperi
+「きさま────いったい何人の生命をその傷のために吸い取った!?」
+```
+
+と聞くと、以下のような回答が返ってきます。
+
+```dio
+「おまえは今まで食ったパンの枚数をおぼえているのか」
+```
+今日はこれをどのようにして実践するのかを見ていきましょう
 
 ---
 
@@ -61,7 +84,7 @@ Retrieval-Augmented Generation（以下 RAG）とは、大規模言語モデル�
 
 <!-- _header: コレクションを作成してみよう -->
 ```bash
-pnpm vector:create
+npm run vector:create
 ```
 上記コマンドを実行して、下記を見てみましょう
 http://localhost:6333/dashboard#/collections
@@ -70,7 +93,7 @@ http://localhost:6333/dashboard#/collections
 
 <!-- _header: コレクションにデータを投入してみよう -->
 ```bash
-pnpm vector:upsert
+npm run vector:upsert
 ```
 上記コマンドを実行して、下記を見てみましょう
 http://localhost:6333/dashboard#/collections
@@ -105,7 +128,7 @@ await qdrantClient.upsert("rag_hands_on", {
 
 <!-- _header: 問い合わせをしてみよう -->
 ```bash
-pnpm dev
+npm run dev
 ```
 上記コマンドを実行して、下記を見てみましょう
 http://localhost:3000

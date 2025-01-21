@@ -3,7 +3,6 @@ RAG構築のハンズオン用のリポジトリです。
 
 ## 事前準備するもの
 - [Node.js ver 22以上](https://nodejs.org/ja)
-- [pnpm](https://pnpm.io/ja/)
 - [Docker Desktop](https://www.docker.com/ja-jp/products/docker-desktop/)
 - [OpenAI API Key](https://platform.openai.com/settings/organization/api-keys)
 
@@ -23,12 +22,12 @@ http://localhost:6333/dashboard にアクセスして、Qdrantのダッシュボ
 
 依存パッケージをインストールします。
 ```bash
-pnpm install
+npm install
 ```
 
 アプリケーションを起動します。
 ```bash
-pnpm dev
+npm run dev
 ```
 
 http://localhost:3000/ にアクセスして、アプリケーションが表示されることを確認してください。
