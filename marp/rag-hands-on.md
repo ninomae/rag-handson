@@ -38,6 +38,7 @@ https://github.com/ninomae/rag-handson
 - 好きな食べ物: ラーメン、鮨、焼肉
 - 職業: エンジニア
 - 趣味: 開発とゲーム
+    - [モンハンワイルズやりましょう](https://hackermeshi.com/communities/106)
 - 好きな言語: C#、TypeScript
   ![bg right:50% height:70%](./images/profile.jpg)
 
