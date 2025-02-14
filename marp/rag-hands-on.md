@@ -39,7 +39,7 @@ https://github.com/ninomae/rag-handson
 - 職業: エンジニア
 - 趣味: 開発とゲーム
 - 好きな言語: C#、TypeScript
-![bg right:50% height:70%](./images/profile.jpg)
+  ![bg right:50% height:70%](./images/profile.jpg)
 
 ---
 
@@ -73,6 +73,7 @@ RAGがある場合
 ```
 今日はこれをどのようにして実践するのかを見ていきましょう
 
+
 ---
 
 <!-- _header: 本日の技術スタック紹介 -->
@@ -105,22 +106,22 @@ http://localhost:6333/dashboard#/collections
 ```typescript
 // 1.open-aiに問い合わせて読み込んだデータをベクトル化
 const { embeddings } = await embedMany({
-	model,
-	values,
+    model,
+    values,
 });
 // 2. VectorDBであるQdrantの形式に変換
 const points = embeddings.map((embedding, index) => {
-	return {
-		id: index,
-		payload: {
-			value: values[index],
-		},
-		vector: embedding,
-	};
+    return {
+        id: index,
+        payload: {
+            value: values[index],
+        },
+        vector: embedding,
+    };
 });
 // 3.QdrantにUpsert
 await qdrantClient.upsert("rag_hands_on", {
-	points,
+    points,
 });
 ```
 
@@ -133,7 +134,7 @@ npm run dev
 上記コマンドを実行して、下記を見てみましょう
 http://localhost:3000
 
-行ったことがある国は？と聞いてみましょう
+きさま────いったい何人の生命をその傷のために吸い取った!?と聞いてみましょう
 
 ---
 
@@ -141,18 +142,18 @@ http://localhost:3000
 ```typescript
 // 1. 入力した内容をベクトル化
 const { embeddings } = await model.doEmbed({
-   values: [query],
+    values: [query],
 });
 // 2. ベクトルを使って類似ドキュメントを検索
 const similarDocuments = await qdrantClient.query("rag_hands_on", {
-   query: embeddings[0],
-   limit: 5,
-   with_payload: true,
+    query: embeddings[0],
+    limit: 5,
+    with_payload: true,
 });
 // 3. 類似ドキュメントを使って回答を生成
 const text = await generateText({
-		model: openai("gpt-4o-mini"),
-		prompt: `以下にユーザーの質問と類似ドキュメントを示します。
+    model: openai("gpt-4o-mini"),
+    prompt: `以下にユーザーの質問と類似ドキュメントを示します。
 ユーザーの質問から、類似ドキュメントに対する回答を示してください。
 		
 ### ユーザーの質問
