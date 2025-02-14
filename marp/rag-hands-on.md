@@ -105,8 +105,6 @@ await qdrantClient.createCollection("rag_hands_on", {
 2つのベクトルが完全に同じ方向を向いていれば 1、直交していれば 0、逆方向なら -1 になります。
 1なら似ている、-1なら違うものだと覚えてもらえればと思います
 
-
-
 ---
 
 <!-- _header: コレクションにデータを投入してみよう -->
@@ -187,6 +185,9 @@ ${similarDocuments.points.map((doc) => doc.payload?.value).join("\n")}
 <!---
 _class: title
 --->
+
+# 究極生命体になった後は何をする？
+# [ひと狩り行こうぜ](https://hackermeshi.com/communities/106)
 
 # ※ハンズオンは以上ですお疲れ様でした︕
 
