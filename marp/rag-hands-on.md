@@ -93,6 +93,22 @@ http://localhost:6333/dashboard#/collections
 
 ---
 
+<!-- _header: 解説: コサイン類似度 -->
+```typescript
+await qdrantClient.createCollection("rag_hands_on", {
+	vectors: { size: 512, distance: "Cosine" },
+});
+```
+ベクトルを比較する手法で`コサイン類似度`が使われてます
+
+コサイン類似度は、2つのベクトルのなす角のコサイン値として定義されます。
+2つのベクトルが完全に同じ方向を向いていれば 1、直交していれば 0、逆方向なら -1 になります。
+1なら似ている、-1なら違うものだと覚えてもらえればと思います
+
+
+
+---
+
 <!-- _header: コレクションにデータを投入してみよう -->
 ```bash
 npm run vector:upsert
